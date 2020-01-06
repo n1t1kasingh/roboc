@@ -37,18 +37,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        NavigationView nav_view=(NavigationView)findViewById(R.id.nav_view);
+        NavigationView nav_view=findViewById(R.id.nav_view);
 
         for(int i=0;i<6;i++) {
             View view = inflater.inflate(R.layout.item, gallery, false);
             TextView textView = view.findViewById(R.id.withText);
             textView.setText("Item" + i);
-            ImageView imageView = findViewById(R.id.imageView);
-            imageView.setImageResource(R.drawable.ic_launcher_background);
+
+
 
             gallery.addView(view);
         }
-
+        ImageView imageView = findViewById(R.id.image_view);
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_background));
             nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
